@@ -25,6 +25,8 @@ Themis is an internal tool. Themis holds a local copy of data from tpt-api and f
 
 This cut scaffolds the project. This cut adds the migrations and the seeds. This cut does not build the monitor screens.
 
+The full application is specified in [THEMIS-SPEC-STE100-001](./THEMIS-SPEC-STE100.md). Build the screens from that document. Keep the database rules in this document.
+
 ## 2. Words
 
 | Term | Meaning |

@@ -1,8 +1,12 @@
 # Themis
 
-Themis is an internal monitor scaffold. This cut stores a SQLite copy of tpt-api data and tpt-webapp usage. This cut does not include the user interface.
+Themis is an internal monitor for tpt-api and tpt-webapp. A reader can read the local SQLite copy. A reader cannot change the copy.
 
-Read [docs/THEMIS-STE100.md](docs/THEMIS-STE100.md). That document is the work instruction. The document uses ASD-STE100.
+Read these documents. Both use ASD-STE100.
+
+- [docs/THEMIS-SPEC-STE100.md](docs/THEMIS-SPEC-STE100.md) is the application specification. Build the screens from that document.
+- [docs/THEMIS-STYLE-STE100.md](docs/THEMIS-STYLE-STE100.md) is the visual style. Copy it from the tpt-webapp.
+- [docs/THEMIS-STE100.md](docs/THEMIS-STE100.md) is the scaffold. It states the database, the seeds, and the read rule.
 
 Run these commands from this folder:
 
