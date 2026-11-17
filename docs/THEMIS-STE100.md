@@ -205,7 +205,9 @@ Run `pnpm db:seed` after `pnpm db:migrate`. You can run the seed again. The seed
 
 `db/seeds/001_plan_catalogue.sql` sets the three paid plans from `tpt-api/packages/db/src/billing-plan-catalog.ts`. The prices are provisional local prices. `dev_unlimited` stays a placeholder.
 
-`db/seeds/002_demo_monitor.sql` inserts synthetic rows only.
+`db/seeds/002_demo_monitor.sql` inserts the named synthetic rows.
+
+`db/seed-volume.ts` then inserts 1000 more synthetic rows in each multi-row table. You can run the seed again. The volume seed deletes the `vorg-` rows and inserts them again. `billing_platform_settings` and `themis_access_policy` stay at one row. The schema check allows one row only. Volume readers use `volume.reader.0001@example.test` through `volume.reader.1000@example.test` and the same local demo password.
 
 | Object | Demo value |
 | --- | --- |

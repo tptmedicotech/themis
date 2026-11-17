@@ -331,18 +331,20 @@ Verify these facts on the screens:
 | Organisations | `Demo Solo Practice` is `solo`. `Demo City Clinic` is `institutional`. |
 | Solo subscription | Plan Solo Pro. Status `active`. |
 | Clinic subscription | Plan Institutional Team. Status `active`. |
-| Product users | Three rows: Demo Owner, Demo Member, Demo Admin. |
+| Product users | The list includes Demo Owner, Demo Member, and Demo Admin. The table holds at least 1000 product users. |
 | Reports | `DEMO synthetic report` is `clinical` and `complete`. `DEMO synthetic EP report` is `ep` and `draft`. |
 | Solo usage on `2026-11-01` | `reports_created` 1, `usage_events` 1, `model_input_tokens` 120, `model_output_tokens` 40, `cost_micros` 1500, `page_views` 1. |
 | Clinic usage on `2026-11-01` | `reports_created` 1, `usage_events` 1, `page_views` 1. |
 | Webapp usage | `/reports` for the solo organisation. `/ep-reports` for the clinic. |
 | Model usage | Provider `openai`, model `gpt-demo`, 120 input tokens, 40 output tokens, cost 1500. |
 | Activity | One `report.finalise` for the solo report. One `report.create` for the clinic report. |
-| Sync | One completed `tpt-api` run. One completed `tpt-webapp` run. |
+| Sync | The list includes one completed demo `tpt-api` run and one completed demo `tpt-webapp` run. |
 | Gaps | The list includes `0006_rls.sql` and `0007_functions.sql`. |
 | Write controls | No screen shows a save, delete, or edit control for a mirror row. |
 | Secrets | The screens do not show a password hash, a session token, an invite `token_hash`, or a PayFast token. |
 | Failed sign-in | A wrong password shows `Sign-in failed.` and does not open the overview. |
+
+The volume seed adds at least 1000 rows to every table except `billing_platform_settings` and `themis_access_policy`. Those two tables allow one row only. The named demo rows stay in the tables.
 
 Run `pnpm db:verify` after the screen check. The command must exit 0.
 

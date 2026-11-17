@@ -1,3 +1,4 @@
+import { assertVolume } from './seed-volume';
 import { authenticate } from '../src/lib/auth';
 import { DEMO_READER_PASSWORD, DEMO_READERS } from '../src/lib/demo-readers';
 import { listSqlFiles, MIGRATIONS_DIR, openDatabase, UPSTREAM_DIR } from '../src/lib/db';
@@ -94,6 +95,12 @@ const plans = db.prepare(`select count(*) as n from billing_plans where placehol
   n: number;
 };
 if (plans.n !== 3) fail('the seed did not set three catalogue plans');
+
+try {
+  assertVolume(db);
+} catch (error) {
+  fail(error instanceof Error ? error.message : 'volume seed is short');
+}
 
 console.log(
   `verified ${applied.size} migrations, ${gapIds.size} upstream gaps, ${reports.length} reports, reader ${reader.email}`,
